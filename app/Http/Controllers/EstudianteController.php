@@ -9,7 +9,7 @@ use Illuminate\Validation\Rule;
 class EstudianteController extends Controller
 {
     // Mostrar estudiantes, aplicar filtros y ordenar resultados
-    public function index(Request $request)
+    public function list(Request $request)
     {
         // Iniciar consulta a la tabla estudiantes
         $consulta = Estudiante::query();
@@ -52,13 +52,13 @@ class EstudianteController extends Controller
             ->orderBy('nombre', $orden)
             ->get();
 
-        return view('estudiantes.index', compact('estudiantes', 'orden'));
+        return view('estudiantes.list', compact('estudiantes', 'orden'));
     }
 
     // Mostrar formulario de registro
-    public function create()
+    public function index()
     {
-        return view('estudiantes.create');
+        return view('estudiantes.index');
     }
 
     // Guardar un nuevo estudiante
@@ -90,10 +90,10 @@ class EstudianteController extends Controller
         ]);
 
         // Insertar el estudiante en la base de datos
-        Estudiante::create($datos);
+        Estudiante::index($datos);
 
         // Volver al listado mostrando un mensaje
-        return redirect()->route('estudiantes.index')
+        return redirect()->route('estudiantes.list')
             ->with('success', 'Estudiante registrado correctamente.');
     }
 
@@ -140,7 +140,7 @@ class EstudianteController extends Controller
         $estudiante->update($datos);
 
         // Regresar al listado
-        return redirect()->route('estudiantes.index')
+        return redirect()->route('estudiantes.list')
             ->with('success', 'Estudiante actualizado correctamente.');
     }
 
@@ -151,7 +151,7 @@ class EstudianteController extends Controller
 
         $estudiante->delete();
 
-        return redirect()->route('estudiantes.index')
+        return redirect()->route('estudiantes.list')
             ->with('success', 'Estudiante eliminado correctamente.');
     }
 }
