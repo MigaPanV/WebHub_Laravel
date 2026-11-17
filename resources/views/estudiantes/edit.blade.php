@@ -127,6 +127,8 @@
                             id="fecha"
                             class="form-control-custom"
                             value="{{ old('fecha', $estudiante->fecha) }}"
+                            min="{{ now()->subYears(100)->toDateString() }}"
+                            max="{{ now()->toDateString() }}"
                             required
                         >
                     </div>
