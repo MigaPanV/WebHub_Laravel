@@ -3,8 +3,8 @@
 @section('title', 'Editar estudiante | WebHub')
 
 @section('navbar-actions')
-    <a href="{{ route('estudiantes.index') }}" class="btn-secondary-custom">
-        Volver al listado
+    <a href="{{ route('estudiantes.list') }}" class="btn-secondary-custom">
+        Ver lista de estudiantes
     </a>
 @endsection
 
@@ -180,7 +180,7 @@
 
                 <!-- Botones -->
                 <div class="d-flex justify-content-end gap-3 mt-4">
-                    <a href="{{ route('estudiantes.index') }}" class="btn-secondary-custom">
+                    <a href="{{ route('estudiantes.list') }}" class="btn-secondary-custom">
                         Cancelar
                     </a>
 
