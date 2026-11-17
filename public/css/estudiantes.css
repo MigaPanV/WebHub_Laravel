@@ -1,0 +1,444 @@
+
+/* =========================================
+   1. CONFIGURACIÓN GENERAL
+========================================= */
+
+:root {
+    --color-background: #000000;
+    --color-surface: #0d0c11;
+    --color-surface-light: #121212;
+
+    --color-purple: #9945ff;
+    --color-mint: #14f195;
+
+    --color-white: #ffffff;
+    --color-muted: #ababba;
+    --color-gray: #8c8c8c;
+
+    --color-border: #1c1b1e;
+    --color-border-hover: #2f2e33;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-white);
+    font-family: "Inter", Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* =========================================
+   2. NAVEGACIÓN
+========================================= */
+
+.navbar-custom {
+    min-height: 64px;
+    background: rgba(0, 0, 0, 0.85);
+    border-bottom: 1px solid var(--color-border);
+    padding: 12px 0;
+}
+
+.brand {
+    color: var(--color-white);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+    text-decoration: none;
+}
+
+.brand:hover {
+    color: var(--color-white);
+}
+
+.brand span {
+    color: var(--color-mint);
+}
+
+.nav-link-custom {
+    color: var(--color-muted);
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-link-custom:hover {
+    color: var(--color-white);
+}
+
+/* =========================================
+   3. CONTENEDOR PRINCIPAL
+========================================= */
+
+.main-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 65px 40px;
+}
+
+.section-label {
+    color: var(--color-mint);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.page-title {
+    color: var(--color-white);
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 500;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.page-description {
+    color: var(--color-muted);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 550px;
+    margin-bottom: 35px;
+}
+
+/* =========================================
+   4. BOTONES
+========================================= */
+
+.btn-primary-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background: var(--color-white);
+    color: #000000;
+
+    border: 1px solid var(--color-white);
+    border-radius: 999px;
+
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.btn-primary-custom:hover {
+    background: var(--color-purple);
+    border-color: var(--color-purple);
+    color: var(--color-white);
+}
+
+.btn-secondary-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    color: var(--color-white);
+
+    border: 1px solid var(--color-border-hover);
+    border-radius: 999px;
+
+    padding: 11px 20px;
+    font-size: 14px;
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.btn-secondary-custom:hover {
+    background: rgba(236, 228, 253, 0.12);
+    color: var(--color-white);
+}
+
+.btn-edit {
+    background: rgba(153, 69, 255, 0.12);
+    color: #c49aff;
+    border: 1px solid rgba(153, 69, 255, 0.3);
+}
+
+.btn-edit:hover {
+    background: var(--color-purple);
+    color: var(--color-white);
+}
+
+.btn-delete {
+    background: rgba(255, 80, 80, 0.08);
+    color: #ff8585;
+    border: 1px solid rgba(255, 80, 80, 0.2);
+}
+
+.btn-delete:hover {
+    background: #d93636;
+    color: var(--color-white);
+}
+
+/* =========================================
+   5. NOTIFICACIONES
+========================================= */
+
+.alert-custom {
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.alert-success-custom {
+    background: rgba(20, 241, 149, 0.08);
+    border: 1px solid rgba(20, 241, 149, 0.25);
+    color: var(--color-mint);
+}
+
+/* =========================================
+   6. PANELES
+========================================= */
+
+.panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.panel-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.panel-title {
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.panel-description {
+    color: var(--color-gray);
+    font-size: 13px;
+    margin: 6px 0 0;
+}
+
+.panel-body {
+    padding: 24px;
+}
+
+/* =========================================
+   7. FORMULARIOS Y FILTROS
+========================================= */
+
+.form-label-custom {
+    display: block;
+    color: var(--color-muted);
+    font-size: 13px;
+    margin-bottom: 9px;
+}
+
+.form-control-custom,
+.form-select-custom {
+    width: 100%;
+    min-height: 45px;
+
+    background-color: #08080a;
+    color: var(--color-white);
+
+    border: 1px solid var(--color-border-hover);
+    border-radius: 7px;
+
+    padding: 10px 13px;
+    font-size: 14px;
+
+    transition: border-color 0.2s ease;
+}
+
+.form-control-custom::placeholder {
+    color: #66636e;
+}
+
+.form-control-custom:focus,
+.form-select-custom:focus {
+    background-color: #08080a;
+    color: var(--color-white);
+    border-color: var(--color-purple);
+    box-shadow: 0 0 0 3px rgba(153, 69, 255, 0.12);
+    outline: none;
+}
+
+.form-select-custom option {
+    background: #0d0c11;
+    color: var(--color-white);
+}
+
+/* =========================================
+   8. TABLA DE ESTUDIANTES
+========================================= */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-custom {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.table-custom thead th {
+    background: #111014;
+    color: var(--color-gray);
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    padding: 17px 16px;
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.table-custom tbody td {
+    color: var(--color-muted);
+    font-size: 13px;
+
+    padding: 17px 16px;
+    border-bottom: 1px solid var(--color-border);
+
+    vertical-align: middle;
+}
+
+.table-custom tbody tr {
+    transition: background 0.2s ease;
+}
+
+.table-custom tbody tr:hover {
+    background: rgba(236, 228, 253, 0.035);
+}
+
+.table-custom tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.student-name {
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+.student-document {
+    color: var(--color-mint);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+}
+
+.student-program {
+    color: #c49aff;
+}
+
+.actions-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.actions-container form {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.actions-container .btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-action {
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.empty-message {
+    color: var(--color-muted);
+    text-align: center;
+    padding: 35px !important;
+}
+
+/* =========================================
+   9. INFORMACIÓN DEL LISTADO
+========================================= */
+
+.table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 17px 24px;
+    border-top: 1px solid var(--color-border);
+}
+
+.table-info {
+    color: var(--color-gray);
+    font-size: 12px;
+}
+
+/* =========================================
+   10. RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .main-container {
+        padding: 40px 20px;
+    }
+
+    .page-title {
+        font-size: 36px;
+    }
+
+    .panel-body {
+        padding: 18px;
+    }
+
+    .table-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .main-container {
+        padding: 30px 15px;
+    }
+
+    .page-title {
+        font-size: 30px;
+    }
+
+    .btn-primary-custom,
+    .btn-secondary-custom {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+}
