@@ -1,59 +1,186 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# WebHub – Gestión de estudiantes
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistema web para la gestión de información de estudiantes, desarrollado con Laravel y MySQL. Permite realizar operaciones CRUD (crear, consultar, actualizar y eliminar registros), además de incorporar herramientas de búsqueda, filtrado y ordenamiento.
 
-## About Laravel
+El proyecto surge como una migración de una aplicación desarrollada inicialmente con PHP tradicional hacia el framework Laravel, con el propósito de organizar mejor el código y aplicar el patrón de arquitectura MVC.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tecnologías utilizadas
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **PHP 8.2:** lenguaje de programación del proyecto.
+- **Laravel 12:** framework para el desarrollo de la aplicación.
+- **MySQL:** sistema de gestión de bases de datos.
+- **Blade:** motor de plantillas de Laravel.
+- **Bootstrap 5:** framework para el diseño de interfaces.
+- **CSS3:** personalización de estilos.
+- **JavaScript:** funcionalidades e interacciones de la interfaz.
+- **XAMPP:** entorno de desarrollo local.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Funcionalidades
 
-## Learning Laravel
+### Gestión de estudiantes
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- Registrar nuevos estudiantes.
+- Consultar el listado de estudiantes.
+- Editar la información de los registros existentes.
+- Eliminar estudiantes.
+- Validar los datos ingresados en los formularios.
+- Evitar el registro de documentos y correos electrónicos duplicados.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Búsqueda y organización
 
-## Laravel Sponsors
+- Buscar estudiantes por número de documento.
+- Filtrar por nombre y apellido.
+- Filtrar por correo electrónico.
+- Filtrar por programa académico.
+- Ordenar los registros alfabéticamente de forma ascendente o descendente.
+- Limpiar los filtros aplicados.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Interfaz de usuario
 
-### Premium Partners
+- Diseño oscuro personalizado.
+- Navegación entre las diferentes secciones.
+- Notificaciones para informar el resultado de las operaciones.
+- Diseño adaptable a diferentes tamaños de pantalla.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Estructura del proyecto
 
-## Contributing
+El proyecto utiliza la estructura de directorios de Laravel, organizando sus componentes de la siguiente manera:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```text
+example-app/
+│
+├── database/
+│   ├── migrations/
+│   ├── seeders/
+│   └── webhub_db.sql
+│
+├── app/
+│   ├── Http/
+│   │   └── Controllers/
+│   │       └── EstudianteController.php
+│   │
+│   └── Models/
+│       └── Estudiante.php
+│
+├── public/
+│   └── css/
+│       └── estudiantes.css
+│
+├── resources/
+│   └── views/
+│       ├── layouts/
+│       │   └── app.blade.php
+│       │
+│       └── estudiantes/
+│           ├── index.blade.php
+│           ├── list.blade.php
+│           └── edit.blade.php
+│
+├── routes/
+│   └── web.php
+│
+├── .env.example
+├── artisan
+└── composer.json
+```
 
-## Code of Conduct
+## Configurar la base de datos
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Iniciar Apache y MySQL desde XAMPP.
 
-## Security Vulnerabilities
+Ingresar a phpMyAdmin.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Crear una base de datos llamada webhub_db.
 
-## License
+Seleccionar la base de datos y acceder a la pestaña Importar.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Seleccionar el archivo database/webhub_db.sql.
+
+Ejecutar la importación.
+
+Una vez completado el proceso, la tabla estudiantes estará disponible para utilizar la aplicación.
+
+Nota: el archivo SQL contiene la estructura de la tabla, pero no incluye registros de estudiantes. Los registros se pueden crear desde el formulario de la aplicación.
+
+## Instalación y configuración
+
+Para ejecutar el proyecto en un entorno local, sigue estos pasos:
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/MigaPanV/WebHub_Laravel.git
+```
+
+### 2. Ingresar al directorio
+
+```bash
+cd WebHub_Laravel
+```
+
+### 3. Instalar las dependencias
+
+```bash
+composer install
+```
+
+### 4. Configurar el archivo de entorno
+
+Crear el archivo `.env` a partir del archivo de ejemplo:
+
+```bash
+copy .env.example .env
+```
+
+Configurar las variables de conexión a la base de datos:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=webhub_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Ajustar las credenciales según la configuración local de MySQL.
+
+### 5. Generar la clave de la aplicación
+
+```bash
+php artisan key:generate
+```
+
+### 6. Configurar la base de datos
+
+Crear la base de datos `webhub_db` en MySQL e importar la estructura de la tabla `estudiantes` y sus datos, si se desea conservar registros existentes.
+
+**Importante:** la tabla `estudiantes` utiliza una estructura propia y una clave primaria personalizada (`ID`). No se debe ejecutar `php artisan migrate:fresh` sobre una base de datos con información que se quiera conservar.
+
+### 7. Iniciar el servidor
+
+```bash
+php artisan serve
+```
+
+Abrir la aplicación en el navegador:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Arquitectura
+
+El proyecto utiliza el patrón **Modelo-Vista-Controlador (MVC)** proporcionado por Laravel:
+
+- **Modelo:** administra la interacción con la tabla `estudiantes` mediante Eloquent ORM.
+- **Vista:** presenta los formularios y el listado de estudiantes utilizando Blade.
+- **Controlador:** procesa las solicitudes, valida la información y coordina las operaciones del sistema.
+
+## Estado del proyecto
+
+Proyecto en desarrollo. Se está realizando la migración progresiva de una aplicación PHP tradicional hacia Laravel, conservando las funcionalidades principales y mejorando la organización y mantenimiento del código.
+
+---
+
+Desarrollado como proyecto académico y práctico para fortalecer conocimientos en desarrollo web, bases de datos y arquitectura MVC.
