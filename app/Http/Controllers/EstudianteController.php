@@ -70,7 +70,7 @@ class EstudianteController extends Controller
             'nombre' => 'required|string|max:60',
             'apellido' => 'required|string|max:60',
             'edad' => 'required|integer|min:1|max:120',
-            'fecha' => 'required|date',
+            'fecha' => 'required|date|before_or_equal:today|after_or_equal:' . now()->subYears(100)->toDateString(),
             'correo' => 'required|email|max:100|unique:estudiantes,correo',
             'programa' => 'required|in:Ingeniería Informática,Ingeniería Industrial,Administración de Empresas',
         ], [
@@ -115,7 +115,7 @@ class EstudianteController extends Controller
             'nombre' => 'required|string|max:60',
             'apellido' => 'required|string|max:60',
             'edad' => 'required|integer|min:1|max:120',
-            'fecha' => 'required|date',
+            'fecha' => 'required|date|before_or_equal:today|after_or_equal:' . now()->subYears(100)->toDateString(),
             'correo' => [
                 'required',
                 'email',
