@@ -15,8 +15,8 @@ class Estudiante extends Model
     // El documento se ingresa manualmente, no es autoincremental
     public $incrementing = false;
 
-    // El tipo de dato de ID es entero
-    protected $keyType = 'int';
+    // El tipo de dato de ID es string por que al hacerlo int, solo acepta un maximo de 2.147.483.647
+    protected $keyType = 'string';
 
     // La tabla antigua no tiene created_at ni updated_at
     public $timestamps = false;
