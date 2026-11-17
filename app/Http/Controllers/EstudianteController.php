@@ -90,7 +90,7 @@ class EstudianteController extends Controller
         ]);
 
         // Insertar el estudiante en la base de datos
-        Estudiante::index($datos);
+        Estudiante::create($datos);
 
         // Volver al listado mostrando un mensaje
         return redirect()->route('estudiantes.list')
